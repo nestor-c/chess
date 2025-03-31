@@ -1,19 +1,22 @@
-#include <string>
-#include <utility>
+#include Pawn.hpp
 
-class Board{
-    public:
-           Board();
+class Board
+{
+private:
+    enum File { A = 0,B,C,D,E,F,G,H};
     
-    protected:
-    private:
-
-        struct Space
-        {
-            Space(std::pair<int,int>coord={0,0},std::string pieceName=""):coordinates(coord){};
-            std::pair<int,int> coordinates;
-            std::string piece = "";
-        };
-        Space Gameboard[8][8];
-     
+    int grid[8][8] = {};
+    Pawn gamePawns[8];
+    
+public:
+    Board();
+    ~Board();
 };
+
+Board::Board()
+{
+}
+
+Board::~Board()
+{
+}
